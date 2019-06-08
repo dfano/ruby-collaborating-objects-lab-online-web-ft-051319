@@ -31,7 +31,12 @@ class Artist
     else
       self.create(name)
     end
+  end
 
+  def self.create(name)
+    self.new(name).tap do|artist|
+      artist.save
+    end
   end
 
 end

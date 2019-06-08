@@ -23,7 +23,6 @@ class Artist
     self.all.find do |artist|
       artist.name == name
     end
-
   end
 
   def self.find_or_create_by_name(name)
@@ -37,8 +36,8 @@ class Artist
     self.new(name).tap {|artist| artist.save}
   end
 
-  def songs
-    Song.find_by_artist(self)
-  end
+  # def songs
+  #   Song.find_by_artist(self)
+  # end
 
 end
